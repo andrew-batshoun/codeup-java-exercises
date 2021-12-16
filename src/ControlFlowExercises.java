@@ -90,7 +90,7 @@ public class ControlFlowExercises {
             }else if (numGrade >= 60){
                 System.out.println("Your letter grade is: D");
             }else{
-                System.out.println("Your letter grade is: F");
+                System.out.println("Your letter grade is: D");
             }
             System.out.println("Do you want to continue? [y/N]");
             String userConfirm = scan.next();
