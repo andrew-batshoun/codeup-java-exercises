@@ -4,7 +4,7 @@ public class ConsoleExercises {
     public static void main(String[] args){
         //1.
 //        double pi = 3.14159;
-//        System.out.format("The value of pi is approximately %f.\n", pi);
+//        System.out.format("The value of pi is approximately %.2f.\n", pi);
 
         //EXPLORE A SCANNER CLASS
         //1.
@@ -29,12 +29,10 @@ public class ConsoleExercises {
 
         //Calculate the perimeter and area of Codeup's classrooms.
         System.out.println("What is the length and Width of the room?");
-        String inputLength = scanner.nextLine();
-        String inputWidth = scanner.nextLine();
-        int length = Integer.parseInt(inputLength);
-        int width = Integer.parseInt(inputWidth);
-        int area = length * width;
-        int perimeter = (length * 2) + (width * 2);
+        float length = scanner.nextInt();
+        float width = scanner.nextInt();
+        float area = length * width;
+        float perimeter = (length * 2) + (width * 2);
 
         System.out.format("The area is: %d sqft%nThe perimeter is: %d ft%n", area, perimeter);
 
