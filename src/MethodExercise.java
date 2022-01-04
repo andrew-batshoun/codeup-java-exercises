@@ -10,6 +10,10 @@ public class MethodExercise {
     }
 
     public static int subtraction(int num1, int num2) {
+//        Jay's solution
+//        if(num1 > num2){
+//            return subtraction(num2, num1);
+//        }
         return num1 - num2;
     }
 
@@ -21,6 +25,7 @@ public class MethodExercise {
             return (num1 + multiplication(num1, num2 - 1));
         }
     }
+
 
     public static int division(int num1, int num2) {
         return num1 / num2;
@@ -36,14 +41,16 @@ public class MethodExercise {
     public static int getInteger(int min, int max) {
         System.out.printf("Enter a number between %d and %d: ", min, max);
         int userInput = scan.nextInt();
-        if (userInput >= 1 && userInput <= 10) {
+        if (userInput >= min && userInput <= max) {
             System.out.println("Your number is with in range.");
             return userInput;
         } else {
             System.out.println("That is not in range.");
             return getInteger(min, max);
         }
+
     }
+
 
     public static long factorial(int n) {
         long output = 1;
@@ -66,10 +73,28 @@ public class MethodExercise {
 //
 //
 //    }
-    public static void rollDice(int num) {
-        int dice1 = (int) (Math.random() * (num - 1) + 1);
-        int dice2 = (int) (Math.random() * (num - 1) + 1);
-        System.out.printf("Dice 1 rolled: %d | Dice 2 rolled : %d%n", dice1, dice2);
+    public static void rollDice() {
+        System.out.println("How many sides?");
+        int sides = scan.nextInt();
+        int dice1 = (int) (Math.random() * (sides - 1) + 1);
+        int dice2 = (int) (Math.random() * (sides - 1) + 1);
+
+        boolean confirm = true;
+
+        do{
+            System.out.printf("Dice 1 rolled: %d | Dice 2 rolled : %d%n", dice1, dice2);
+            System.out.println("would you like to go again? [y/n]");
+            String userConfirm = scan.next();
+            if(userConfirm.equalsIgnoreCase("n")) {
+                confirm = false;
+            }else {
+                rollDice();
+            }
+
+        }while (confirm);
+
+
+
     }
 
 
@@ -90,17 +115,7 @@ public class MethodExercise {
 //        }
 
 
-
-//        boolean confirm = true;
-//        while (confirm) {
-//            System.out.println("How many sides?");
-//            int sides = scan.nextInt();
-//            rollDice(sides);
-//            System.out.println("would you like to go again? [y/n]");
-//            String userConfirm = scan.next();
-//            confirm = userConfirm.equalsIgnoreCase("y");
-//        }
-
+rollDice();
 
     }
 
