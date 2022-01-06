@@ -12,14 +12,34 @@ public class Input {
         return string;
     }
 
+    public String getString(String str) {
+        System.out.println("Enter a string");
+        String string = scanner.next();
+        System.out.println(string);
+        return string;
+    }
+
+
     public boolean yesNo() {
         System.out.println("Enter yes or no.");
-        String yes = scanner.next();
+        String yes = scanner.next().trim();
         if (yes.equalsIgnoreCase("y") || yes.equalsIgnoreCase("yes")) {
-            System.out.println("true");
+
             return true;
         } else {
-            System.out.println("false");
+            return false;
+        }
+    }
+
+    public boolean yesNo(String str) {
+        System.out.println(str);
+        System.out.println("Enter yes or no.");
+        String yes = scanner.next().trim();
+        if (yes.equalsIgnoreCase("y") || yes.equalsIgnoreCase("yes")) {
+
+            return true;
+        } else {
+
             return false;
         }
     }
@@ -37,8 +57,17 @@ public class Input {
 
     }
 
+
     public int getInt() {
         System.out.println("Enter a number");
+        int num = scanner.nextInt();
+        System.out.println(num);
+
+        return num;
+    }
+
+    public int getInt(String Str) {
+
         int num = scanner.nextInt();
         System.out.println(num);
 
@@ -56,10 +85,17 @@ public class Input {
             return getDouble(min, max);
         }
     }
-        public Double getDouble () {
-            System.out.println("Enter a number");
-            Double num = scanner.nextDouble();
-            System.out.println(num);
-            return num;
-        }
+
+    public Double getDouble() {
+        System.out.println("Enter a number");
+        Double num = scanner.nextDouble();
+        System.out.println(num);
+        return num;
     }
+
+    public Double getDouble(String str) {
+        Double num = scanner.nextDouble();
+        System.out.println(num);
+        return num;
+    }
+}

@@ -3,9 +3,6 @@ package shapes;
 public class Circle {
     private double radius;
 
-    public void setRadius( double input){
-        this.radius = input;
-    }
 
     public Circle(double radius){
         this.radius = radius;
