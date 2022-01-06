@@ -3,7 +3,7 @@ package util;
 import java.util.Scanner;
 
 public class Input {
-    private static Scanner scanner = new Scanner(System.in).useDelimiter("\n");
+    private Scanner scanner = new Scanner(System.in).useDelimiter("\n");
 
     public String getString() {
         System.out.println("Enter a string");
@@ -13,7 +13,7 @@ public class Input {
     }
 
     public String getString(String str) {
-        System.out.println("Enter a string");
+        System.out.println(str);
         String string = scanner.next();
         System.out.println(string);
         return string;
@@ -56,6 +56,18 @@ public class Input {
         }
 
     }
+    public int getInt(String prompt, int min, int max) {
+        System.out.println(prompt);
+        int userInput = scanner.nextInt();
+        if (userInput >= min && userInput <= max) {
+            System.out.println("Your number is with in range.");
+            return userInput;
+        } else {
+            System.out.println("That is not in range.");
+            return getInt(min, max);
+        }
+
+    }
 
 
     public int getInt() {
@@ -83,6 +95,17 @@ public class Input {
         } else {
             System.out.println("That is not in range.");
             return getDouble(min, max);
+        }
+    }
+public Double getDouble(String prompt, Double min, Double max) {
+        System.out.printf(prompt);
+        Double userInput = scanner.nextDouble();
+        if (userInput >= min && userInput <= max) {
+            System.out.println("Your number is with in range.");
+            return userInput;
+        } else {
+            System.out.println("That is not in range.");
+            return getDouble(prompt, min, max);
         }
     }
 
