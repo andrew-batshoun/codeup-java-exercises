@@ -79,7 +79,7 @@ public class Input {
     }
 
     public int getInt(String Str) {
-
+        System.out.println(Str);
         int num = scanner.nextInt();
         System.out.println(num);
 
