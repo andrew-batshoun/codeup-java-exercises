@@ -8,6 +8,7 @@ import java.util.Arrays;
 public class MoviesApplication {
 
 
+
     public static void main(String[] args) {
         boolean confirm = true;
         do {
@@ -16,11 +17,12 @@ public class MoviesApplication {
             Input userInput = new Input();
             MoviesArray movie = new MoviesArray();
             Movie[] movies = movie.findAll();
+            Movie addedMovie = new Movie();
 
 
             System.out.println("What would you like to do?");
             System.out.println();
-            System.out.println("0 - exit\n1 - view all movies\n2 - view movies in the animated category\n3 - view movies in the drama category\n4 - view movies in the horror category\n5 - view movies in the scifi category\n6 - add a new movie");
+            System.out.println("0 - exit\n1 - view all movies\n2 - view movies in the animated category\n3 - view movies in the drama category\n4 - view movies in the horror category\n5 - view movies in the scifi category");
 
             int choice = userInput.getInt("Enter your choice:");
 
