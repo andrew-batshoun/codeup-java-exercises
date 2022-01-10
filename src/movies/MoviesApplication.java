@@ -1,21 +1,26 @@
 package movies;
+
 import util.Input;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class MoviesApplication {
     private static Scanner scan = new Scanner(System.in);
 
-public static Movie[] addMovie(Movie[] array, Movie length){
-    System.out.println("What is the name of the movie?");
-    String userMovie = scan.nextLine();
-    System.out.println("What category is the movie?\nhorror\nanimated\nscifi\ndrama\nmusical");
-    String userCat = scan.nextLine();
-    Movie newMovie = new Movie(userMovie, userCat);
-    Movie[] newArray = Arrays.copyOf(array, array.length + 1);
-    newArray[newArray.length - 1] = newMovie;
-   return newArray;
-}
+    public static Movie[] addMovie(Movie[] array) {
+        Movie newMovie = new Movie();
+        Movie[] newArray = Arrays.copyOf(array, array.length + 1);
+        System.out.println("What is the name of the movie?");
+        String userMovie = scan.nextLine();
+        newMovie.setName(userMovie);
+        System.out.println("What category is the movie?\nhorror\nanimated\nscifi\ndrama\nmusical");
+        String userCat = scan.nextLine();
+        newMovie.setCategory(userCat);
+
+        newArray[newArray.length - 1] = newMovie;
+        return newArray;
+    }
 
     public static void main(String[] args) {
         boolean confirm = true;
@@ -30,7 +35,7 @@ public static Movie[] addMovie(Movie[] array, Movie length){
 
             System.out.println("What would you like to do?");
             System.out.println();
-            System.out.println("0 - exit\n1 - view all movies\n2 - view movies in the animated category\n3 - view movies in the drama category\n4 - view movies in the horror category\n5 - view movies in the scifi category");
+            System.out.println("0 - exit\n1 - view all movies\n2 - view movies in the animated category\n3 - view movies in the drama category\n4 - view movies in the horror category\n5 - view movies in the scifi category\n6 - view movies in the musical category\n7 - add a movie");
 
             int choice = userInput.getInt("Enter your choice:");
 
@@ -73,10 +78,24 @@ public static Movie[] addMovie(Movie[] array, Movie length){
                             System.out.println(movies[i].getName());
                         }
                     }
+                    break;
+                case 6:
+                    for (int i = 0; i < movies.length; i++) {
+                        if (movies[i].getCategory() == "musical") {
+                            System.out.println(movies[i].getName());
+                        }
+                    }
+                    break;
+                case 7:
+                    addMovie(movies);
+
+                    System.out.println(Arrays.toString(movies));
+
+                    break;
                 default:
                     System.out.println("That is not a choice, try again.");
 
             }
-        }while (confirm);
+        } while (confirm);
     }
 }
