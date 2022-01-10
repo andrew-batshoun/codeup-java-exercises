@@ -1,13 +1,21 @@
 package movies;
-
 import util.Input;
-
-import java.sql.SQLOutput;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class MoviesApplication {
+    private static Scanner scan = new Scanner(System.in);
 
-
+public static Movie[] addMovie(Movie[] array, Movie length){
+    System.out.println("What is the name of the movie?");
+    String userMovie = scan.nextLine();
+    System.out.println("What category is the movie?\nhorror\nanimated\nscifi\ndrama\nmusical");
+    String userCat = scan.nextLine();
+    Movie newMovie = new Movie(userMovie, userCat);
+    Movie[] newArray = Arrays.copyOf(array, array.length + 1);
+    newArray[newArray.length - 1] = newMovie;
+   return newArray;
+}
 
     public static void main(String[] args) {
         boolean confirm = true;
