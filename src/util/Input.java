@@ -1,5 +1,6 @@
 package util;
 
+import java.text.Format;
 import java.util.Scanner;
 
 public class Input {
@@ -70,12 +71,23 @@ public class Input {
     }
 
 
+//    public int getInt() {
+//        System.out.println("Enter a number");
+//        int num = scanner.nextInt();
+//        System.out.println(num);
+//
+//        return num;
+//    }
     public int getInt() {
         System.out.println("Enter a number");
-        int num = scanner.nextInt();
-        System.out.println(num);
+        try {
+            String num = scanner.next();
+            return Integer.valueOf(num);
+        }catch(NumberFormatException e){
+            System.out.println("\nThat is not a number. Please try again.");
+        }
+       return getInt();
 
-        return num;
     }
 
     public int getInt(String Str) {
@@ -109,16 +121,54 @@ public Double getDouble(String prompt, Double min, Double max) {
         }
     }
 
+//    public Double getDouble() {
+//        System.out.println("Enter a number");
+//        Double num = scanner.nextDouble();
+//        System.out.println(num);
+//        return num;
+//    }
+
     public Double getDouble() {
         System.out.println("Enter a number");
-        Double num = scanner.nextDouble();
-        System.out.println(num);
-        return num;
+        try {
+            String num = scanner.next();
+            return Double.valueOf(num);
+        }catch(NumberFormatException e){
+            System.out.println("\nThat is not a number. Please try again.");
+        }
+        return getDouble();
     }
 
     public Double getDouble(String str) {
         Double num = scanner.nextDouble();
         System.out.println(num);
         return num;
+    }
+
+    public Integer getBinary(){
+        System.out.println("Enter a binary number");
+        try {
+            String num = scanner.next();
+            Integer binaryNum = Integer.valueOf(num, 2);
+            System.out.println(binaryNum);
+            return binaryNum;
+        }catch(NumberFormatException e){
+            System.out.println("\nThat is not a binary number. Please try again.");
+        }
+        return getBinary();
+    }
+
+    public Integer getHex(){
+            System.out.println("Enter a Hex number");
+            try {
+                String num = scanner.next();
+                Integer hexNum = Integer.valueOf(num, 16);
+                System.out.println(hexNum);
+                return hexNum;
+            }catch(NumberFormatException e){
+                System.out.println("\nThat is not a Hex number. Please try again.");
+            }
+            return getHex();
+
     }
 }

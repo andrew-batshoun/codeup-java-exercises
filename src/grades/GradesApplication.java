@@ -32,9 +32,10 @@ public class GradesApplication {
 
         Scanner scan = new Scanner(System.in);
         boolean confirm;
+        System.out.println("Welcome!");
+        System.out.println();
         do {
-            System.out.println("Welcome!");
-            System.out.println();
+
             System.out.println("Here are the GitHub usernames of our students:");
             System.out.println();
             System.out.println("|colorfulpod95|   |privatethings58|   |saltycompany25|   |pinkbed40|");

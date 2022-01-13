@@ -1,6 +1,7 @@
 package grades;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Student {
     private String name;
@@ -35,6 +36,7 @@ public class Student {
         }
         return sum /grades.size();
     }
+
 
     public static void main(String[] args) {
         Student bobby = new Student("Bobby");

@@ -6,7 +6,9 @@ public class InputTest {
 //    test.yesNo();
 //    test.getString();
 //    test.getInt();
-    test.getDouble(1, 2);
+//    test.getDouble();
+//    test.getBinary();
+    test.getHex();
 
 
 

@@ -32,8 +32,8 @@ public class listApp {
                 Collections.sort(groceryCat);
                 boolean doAgain = true;
                 while (doAgain) {
-                    String userCat = input.getString("Choose a category: " + groceryCat + "or type exit if your done.");
-
+                    String userCat = input.getString("Choose a category: " + groceryCat + " type exit if your done or type edit to change your list.");
+// can add the getstring input variable and getint input variable above to use less code. REFACTOR
                     switch (userCat) {
                         case "meat":
                             String meatInput = input.getString("Enter the name of the item");
@@ -58,9 +58,30 @@ public class listApp {
                             groceryList.put(bakeryInput, bakeryCount);
                             break;
                         case "exit":
+
                             System.out.println("Here is your list : \n" + groceryList);
                             doAgain = false;
                             break;
+                        case "edit":
+                            String editList = input.getString("Would you like to edit the item or the quantity on your list?");
+                            if(editList.equalsIgnoreCase("quantity")){
+                                String whichItem = input.getString("Which item would you like to change?\n" + groceryList);
+                                Integer howMany = input.getInt("How many?");
+                                groceryList.replace(whichItem, howMany);
+                            }else if(editList.equalsIgnoreCase("item")){
+                                String whatItem = input.getString("Which item would you like to change?\n" + groceryList);
+                                String getItem = input.getString("What would you like to replace the item with?");
+                                Integer getCount = input.getInt("How many?");
+                                groceryList.remove(whatItem);
+                                groceryList.put(getItem, getCount);
+                            }else{
+                                System.out.println("Sorry, that is not a selection");
+                            }
+
+                            break;
+
+
+
                         default:
                             System.out.println("That's a strange category.");
                     }
