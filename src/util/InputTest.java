@@ -7,8 +7,8 @@ public class InputTest {
 //    test.getString();
 //    test.getInt();
 //    test.getDouble();
-//    test.getBinary();
-    test.getHex();
+    test.getBinary();
+//    test.getHex();
 
 
 

@@ -1,6 +1,5 @@
 package util;
 
-import java.text.Format;
 import java.util.Scanner;
 
 public class Input {
@@ -145,10 +144,21 @@ public Double getDouble(String prompt, Double min, Double max) {
         return num;
     }
 
-    public Integer getBinary(){
-        System.out.println("Enter a binary number");
+//    public Integer getBinary(){
+//        System.out.println("Enter a binary number");
+//        try {
+//            String num = scanner.next();
+//            Integer binaryNum = Integer.valueOf(num, 2);
+//            System.out.println(binaryNum);
+//            return binaryNum;
+//        }catch(NumberFormatException e){
+//            System.out.println("\nThat is not a binary number. Please try again.");
+//        }
+//        return getBinary();
+//    }
+public Integer getBinary() {
+        String num = getString("Enter a binary Num:");
         try {
-            String num = scanner.next();
             Integer binaryNum = Integer.valueOf(num, 2);
             System.out.println(binaryNum);
             return binaryNum;
@@ -156,19 +166,19 @@ public Double getDouble(String prompt, Double min, Double max) {
             System.out.println("\nThat is not a binary number. Please try again.");
         }
         return getBinary();
-    }
+}
 
     public Integer getHex(){
-            System.out.println("Enter a Hex number");
-            try {
-                String num = scanner.next();
-                Integer hexNum = Integer.valueOf(num, 16);
-                System.out.println(hexNum);
-                return hexNum;
-            }catch(NumberFormatException e){
-                System.out.println("\nThat is not a Hex number. Please try again.");
-            }
-            return getHex();
+        System.out.println("Enter a Hex number");
+        try {
+            String num = scanner.next();
+            Integer hexNum = Integer.valueOf(num, 16);
+            System.out.println(hexNum);
+            return hexNum;
+        }catch(NumberFormatException e){
+            System.out.println("\nThat is not a Hex number. Please try again.");
+        }
+        return getHex();
 
     }
 }

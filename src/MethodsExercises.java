@@ -1,7 +1,7 @@
 import java.lang.Math;
 import java.util.Scanner;
 
-public class MethodExercise {
+public class MethodsExercises {
     private static Scanner scan = new Scanner(System.in);
     //Basic Arithmetic
 
